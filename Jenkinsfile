@@ -40,21 +40,26 @@ pipeline{
                 echo "passwoed $params.password"
             }
         }
-        stage("parlell"){
-            steps{
-            parllel{
-                stage("parllel-first"){
-                    steps{
-                    echo "first parllel"
+        stage('Parallel Stage') {
+            parallel {
+                stage('Branch A') {
+                    steps {
+                        echo "On Branch A"
                     }
                 }
-                stage("second-par"){
-                    steps{
-                        echo "second parllel"
+                stage('Branch B') {
+                    steps {
+                        echo "On Branch B"
+                    }
+                }
+                stage('Branch C') {
+                          steps {
+                                echo "In stage Nested 1 within Branch C"
+                            }
+                        }
+                       
                     }
                 }
             }
-        }
-    }
 }
-}
+    
