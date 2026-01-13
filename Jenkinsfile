@@ -40,5 +40,19 @@ pipeline{
                 echo "passwoed $params.password"
             }
         }
+        stage("parlell"){
+            parllel{
+                stage("parllel-first"){
+                    steps{
+                    echo "first parllel"
+                    }
+                }
+                stage("second-par"){
+                    steps{
+                        echo "second parllel"
+                    }
+                }
+            }
         }
+    }
 }
