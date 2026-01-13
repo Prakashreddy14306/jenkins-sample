@@ -41,6 +41,7 @@ pipeline{
             }
         }
         stage("parlell"){
+            steps{
             parllel{
                 stage("parllel-first"){
                     steps{
@@ -55,4 +56,5 @@ pipeline{
             }
         }
     }
+}
 }
