@@ -41,6 +41,9 @@ pipeline{
             }
         }
         stage('Parallel Stage') {
+            when {
+                expression { params.toggle = true }
+            }
             parallel {
                 stage('Branch A') {
                     steps {
