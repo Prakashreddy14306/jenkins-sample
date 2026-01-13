@@ -42,7 +42,7 @@ pipeline{
         }
         stage('Parallel Stage') {
             when {
-                expression { params.toggle = true }
+                expression { params.toggle == true }
             }
             parallel {
                 stage('Branch A') {
